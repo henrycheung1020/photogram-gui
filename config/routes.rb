@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get("/", :controller => "users", :action => "home")
+
   get("/users", { :controller => "users", :action => "index"})
+
+  post("/add_user", { :controller => "users", :action => "create"})
 
   get("/users/:path_username", { :controller => "users", :action => "show"})
 

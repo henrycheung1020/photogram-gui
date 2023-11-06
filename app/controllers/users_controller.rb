@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def home
+    redirect_to("/users")
+  end 
   def index
     matching_users = User.all
     @list_of_users = matching_users.order({ :username => :asc})
@@ -11,5 +14,17 @@ class UsersController < ApplicationController
     @the_user = matching_usernames.at(0)
 
     render({ :template => "user_template/show"})
+  end
+
+  def create
+    input_username = params.fetch("query_username")
+
+    a_new_user = User.new 
+    a_new_user.username = input_username 
+
+    a_new_user.save
+
+    redirect_to("/photos/"+ a_new_user.id.to_s)
+    #render( :template => "photo_templates/create")
   end
 end
