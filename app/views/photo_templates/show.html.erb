@@ -66,7 +66,11 @@
   
   <% @the_photo.comments.each do |a_comment|%>
   <tr>
+    <td><%= a_comment.commenter.username %></td>
+    <td><%= a_comment.body %></td>
+    <td><%= a_comment.commenter.created_at %></td>
   </tr>
+  <% end %>
 </table>
 
 <h3>Add a new comment</h3>

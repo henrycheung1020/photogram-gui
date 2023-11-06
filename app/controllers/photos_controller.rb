@@ -11,4 +11,8 @@ class PhotosController < ApplicationController
     @the_photo = matching_photos.at(0)
     render({ :template => "photo_templates/show"})
   end
+
+  def delete 
+
+  end
 end
