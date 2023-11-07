@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
     a_new_user.save
 
-    redirect_to("/photos/"+ a_new_user.id.to_s)
-    #render( :template => "photo_templates/create")
+    redirect_to("/users/"+ a_new_user.username)
+    
   end
 end
